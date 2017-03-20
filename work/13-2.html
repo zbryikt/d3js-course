@@ -1,0 +1,21 @@
+<script src="d3.v4.min.js"></script>
+<script src="d3-selection-multi.v1.min.js"></script>
+<body>
+  <svg width="100%" height="100%" viewBox="-50 -50 100 100">
+    <path/>
+  </svg>
+  <script>
+    var builder = d3.radialLine()
+      .angle(function(d,i) { return 2 * Math.PI * i/(pi1.length - 1); })
+      .radius(function(d,i) { return d * 2 + 10; });
+    var pi1 = [3,1,4,1,5,9,2,6,5,3,5,8,9,7,9,3,2,3,8,4,6,2];
+    var pi2 = [3,1,4,1,5,9,2,6,5,3,5,8,9,7,9,3,2,3,8,4,6,2].reverse();
+    d3.select("path")
+      .attrs({ fill: "none", stroke: "#000", "stroke-width": 1})
+      .datum(pi1)
+      .attrs({d: builder})
+      .datum(pi2)
+      .transition().duration(1000)
+      .attrs({d: builder});
+  </script>
+</body>

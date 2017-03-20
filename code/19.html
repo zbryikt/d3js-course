@@ -1,0 +1,13 @@
+<body></body>
+<script src="d3.v4.min.js"></script>
+<script src="d3-selection-multi.v1.min.js"></script>
+<script>
+  var data = d3.range(20).map(function(d,i) {
+    return {
+      value: Math.round(Math.random() * 99),
+      category: ["A","B","C"][Math.floor(Math.random() * 3)]
+    };
+  });
+  console.log(data);
+  d3.select("body").text(JSON.stringify(data));
+</script>

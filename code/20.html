@@ -1,0 +1,14 @@
+<body></body>
+<script src="d3.v4.min.js"></script>
+<script src="d3-selection-multi.v1.min.js"></script>
+<script>
+  var data = d3.range(20).map(function(d,i) {
+    return {
+      value: Math.round(Math.random() * 100),
+      category: ["A","B","C"][Math.floor(Math.random() * 3)]
+    };
+  });
+  var ret = d3.nest().key(function(d,i) { return d.category; }).map(data).keys();
+  d3.select("body").text(ret);
+  console.log(ret);
+</script>

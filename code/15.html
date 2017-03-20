@@ -1,0 +1,11 @@
+<body></body>
+<script src="d3.v4.min.js"></script>
+<script src="d3-selection-multi.v1.min.js"></script>
+<script>
+  var scale = d3.scaleLinear()
+    .domain([1,9])
+    .range([10,800]);
+  var r1 = scale(4);
+  d3.select("body").text(r1);
+</script>
+
